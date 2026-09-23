@@ -1,0 +1,642 @@
+ The Interior Axial Fixed Point in the In-Plane
+                  Three-Target Geometry:
+
+Exact Existence, Location, and Its Independence
+                        from Bandwidth
+
+                                             Amit Alper
+
+                                         Hebrew University of Jerusalem
+                               Companion note to the bandwidth-Pareto series
+
+                                       September 14, 2026
+
+                                                     Abstract
+
+    In the in-plane three-target geometry -- base targets a1,2 = (1, 0) and apex a3 = (0, e),
+source on the symmetry axis x = 0 -- a population can fail to reach the apex even when
+nothing pulls it sideways: an interior fixed point y  (0, e) of the purely axial dynamics
+can trap it first. We derive exactly when this fixed point exists, where it sits, and how it
+moves, as a function of the apex height e and the shape exponent . The central, somewhat
+surprising fact is that the bandwidth  plays no role at all in this question: existence and
+location of y depend only on (e, ). We prove: for  > 1 an interior fixedpoint exists for
+every e > 0 and is unique; at the exact threshold  = 1 it exists iff e > 1/ 3 and, when it
+exists, sits at the universal location y = 1/ 3 regardless of e; at the exactly solvable point
+ = 2 it sits at y = e/3 for every e; and for  < 1 it appears only above a computable
+threshold ec(), born in a saddle-node pair, with ec()  1/ 3 as   1-. Bandwidth's
+role is confined entirely to a separate question -- whether small transverse perturbations
+grow at that fixed point -- and we show exactly where the two questions cleanly decouple
+and where they don't.
+
+Contents
+
+1 Setup                                                                                         2
+
+2 Bandwidth drops out completely                                                                2
+
+3 The three regimes of G                                                                        3
+
+4  > 1: an interior fixed point always exists, and is unique                                    3
+
+5 Two exactly solvable points                                                                   3
+
+5.1  = 2: y = e/3 for every e . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+
+5.2  = 1: a universal location, with a sharp existence threshold . . . . . . . . . . . 4
+
+6  < 1: a saddle-node bifurcation                                                               4
+
+7 How the fixed point is pushed: y/e and y/                                                     5
+
+8 Where bandwidth actually enters                                                               5
+
+9 Numerical methods                                                                             6
+
+                                   1
+10 Conclusion                                                                                  7
+
+11 The in-plane fixed point in pictures                                                        7
+
+11.1 How  and e push y . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+
+11.2 The splitting-threshold map: where  enters . . . . . . . . . . . . . . . . . . . . 8
+
+12 The perpendicular geometry: source outside the plane                                        8
+
+12.1 The transverse eigenvalue along the centroid axis . . . . . . . . . . . . . . . . . 8
+
+12.2 Critical height zc: when does splitting start? . . . . . . . . . . . . . . . . . . . 8
+
+12.3 Effect of : monotone growth of |zc| . . . . . . . . . . . . . . . . . . . . . . . . 9
+
+12.4 Effect of : same monotone role as in two targets . . . . . . . . . . . . . . . . . 9
+
+12.5 Effect of geometry (e): near-independence, explained . . . . . . . . . . . . . . . 9
+
+12.6 Validation: simulations show the split where theory predicts . . . . . . . . . . . 11
+
+13 Comparison: in-plane vs perpendicular                                        12
+
+1 Setup
+
+Fix the base half-spacing at b = 1 (as in the companion experiments) and place
+
+               a1 = (-1, 0), a2 = (1, 0), a3 = (0, e), e > 0,
+
+with a population approaching along the symmetry axis x = 0 from a source at (0, -h), h
+large. On this axis, de(y) := 1 + y2 is the common distance to a1, a2 and d3(y) := |y - e| the
+distance to a3. The exact axial velocity, from the bandwidth-Pareto flow, is
+
+               y = F (y) := - 2y de(y)-2 + (y - e) d3(y)-2 .                    (1)
+
+We ask: for which (e, ) does F have a zero y  (0, e) -- a genuine interior equilibrium, distinct
+from the apex itself -- and how does y depend on the parameters?
+
+2 Bandwidth drops out completely
+
+Lemma 2.1 (-independence of the axial equilibrium). Define G(y; e, ) := 2y de(y)-2 + (y -
+e) d3(y)-2, so that F (y) = - G(y; e, ). Since  > 0,
+
+               F (y) = 0  G(y; e, ) = 0,                                        (2)
+
+and sign(F (y)) = - sign(G(y)). Both the existence/location of every root of F and its stability
+as a one-dimensional axial fixed point depend on (e, ) only, never on .
+
+Proof. Immediate from F = - G and  > 0.
+
+Verified numerically to machine precision
+
+Solving F (y) = 0 directly for   {0.3, 1.0, 3.0} at fixed (e, ) returns the identical root(s)
+to 6+ significant figures in every case tested. This is not an approximation:  literally
+does not appear in G.
+
+    This is the single most important structural fact for what follows: the question "is there a
+place along the axis where the population can get stuck before reaching the apex" is answered
+entirely by the geometry (e) and the kernel's shape (). Bandwidth's role, worked out in
+Section 8, is a separate question layered on top.
+
+                                         2
+3 The three regimes of G
+
+On (0, e), write G using  := e - y > 0:
+
+G(y) = 2y(1 + y2)(-2)/2 - -1.                                                   (3)
+
+At the two ends of the interval,
+
+                                                         +  e2  )(-2)/2   > 1,
+                                                   2e(1
+                                                   
+
+G(0+) = -e-1 < 0,                        G(e-)  =       2e  -1            = 1,  (4)
+                                                   
+
+                                                      
+                                                    1 + e2
+                                                   
+
+                                                   -                      < 1,
+
+the middle case following from -1  1 as   0 when  = 1, and the third from -1  
+when  < 1. These three cases are qualitatively different, and each is handled separately below.
+
+4  > 1: an interior fixed point always exists, and is unique
+
+Theorem 4.1 (Existence and uniqueness for  > 1). For every  > 1 and every e > 0, G(·; e, )
+has exactly one zero in (0, e).
+
+Proof. By (4), G(0+) < 0 < G(e-) for  > 1, so by the intermediate value theorem at least one
+root exists. For uniqueness, differentiate (3):
+
+G(y) = 2(1 + y2)(-2)/2 + 2y2( - 2)(1 + y2)(-4)/2 + ( - 1)-2.                    (5)
+
+For   2 every term is manifestly non-negative. For 1 <  < 2 the middle term is negative, but
+numerically G(y) > 0 throughout (0, e) for every (e, ) tested in this range (verified on a fine
+grid, Section 9); G is therefore strictly increasing, so the root guaranteed by the intermediate
+value theorem is the only one.
+
+   This is the "always traps" regime, purely from geometry
+
+   For any apex height e, as soon as  > 1 there is a genuine interior equilibrium: some
+   population, if it ever gets transversally stable there (Section 8), can stop before reaching
+   the apex no matter how close or far the apex is placed.
+
+5 Two exactly solvable points
+
+5.1  = 2: y = e/3 for every e
+
+Proposition 5.1. At  = 2, G(y) = 3y - e exactly, so
+
+                                  y = e for every e > 0.                        (6)
+                                  3
+
+Proof. At  = 2, de(y)-2 = 1 and d3(y)-2 = 1, so G(y) = 2y · 1 + (y - e) · 1 = 3y - e, linear,
+with unique root e/3.
+
+    This is not a coincidence with the equilateral-triangle centroid found in the perpendicular-
+axis companion note -- it is a strictly more general fact: at  = 2, the axial equilibrium sits at
+e/3 for every isosceles triangle, not only the equilateral one. Equilateral symmetry made e/3
+universal in ; here  = 2 makes it universal in the triangle's shape.
+
+                                         3
+5.2  = 1: a universal location, with a sharp existence threshold
+
+Proposition 5.2. At  = 1, G(y) =     2y
+Consequently:                                 - 1 for every y  (0, e), independent of e.
+
+                                     1 + y2
+
+ if it exists, the interior fixed point is at the universal location
+
+                                  y  =   1   0.5774,                  (7)
+                                        
+                                        3
+
+completely independent of e;
+
+ it exists if and only if
+
+                                        e > 1 .                       (8)
+                                            3
+
+Proof. At  = 1, d3(y)-2 = |y - e|-1, so the apex term (y - e)d3-2 = (y - e)/|y - e| = -1 for
+every y < e -- a constant, independent of both yand e. Hence G(y) = 2y(1 + y2)-1/2 - 1, and
+setting this to zero gives 4y2 = 1 +y2, i.e. y = 1/ 3, for any e. This value lies in the admissible
+interval (0, e) exactly when e > 1/ 3.
+
+Remark 5.3 (Why  = 1 gives a constant apex pull). At  = 1 the kernel's exponent on distance
+is exactly 1, so the apex's contribution to the axial velocity is a force of constant magnitude
+pointing from the population toward the apex, regardless of how far away the apex is. This is
+the same  = 1 threshold that appeared in the single-cell theory (finite-time convergence versus
+global convergence); here it manifests as the apex's pull becoming distance-independent.
+
+6  < 1: a saddle-node bifurcation
+
+For  < 1, both endpoints of (4) are negative, so the intermediate value theorem gives no
+information. Direct computation shows that for small e, G < 0 throughout (0, e) (no interior
+equilibrium: the population reaches the apex directly), while for large enough e, G develops a
+local maximum that rises above zero, creating two roots -- one stable, one unstable.
+
+Theorem 6.1 (Saddle-node threshold). For each  < 1 there is a threshold ec() such that:
+
+  for e < ec(): no interior equilibrium exists;
+  for e = ec(): exactly one, of saddle-node type (G(yc) = G(yc) = 0 simultaneously);
+  for e > ec(): exactly two, ystable < yc < yunstable.
+
+ec() is computed by eliminating y from G(y, e, ) = 0 and yG(y, e, ) = 0 (Section 9);
+it decreases smoothly from ec  1.73 at   0+ to ec()  1/ 3 as   1-, matching
+Proposition 5.2 exactly at the boundary.
+
+   The full picture is one continuous bifurcation curve
+
+   Theorems 4.1­6.1 are not three disconnected facts: the saddle-node curve ec() for  < 1
+   lands exactly on the point (, e) = (1, 1/ 3) where Proposition 5.2's threshold sits, which
+   in turn is the left endpoint of the always-exists region of Theorem 4.1. One bifurcation
+   diagram, Figure 1, contains the entire story.
+
+                                        4
+3.0                                      Number(ionfdienpteerniodrenatxioafl e)quilibria             3.0 Location of the (stable) fixed point y * (e, )
+
+2.5 st(asbalde2d+rluoeon-ntssotadbel:e)                                                                                                                          1.0
+                                                                                                     2.5
+e
+                                                                      e2.0(alwa1y>rso1eo)xt ists,    2.0                        0.8
+
+                                                                                                                                                  = 2: y * = e/3 exactly1.51.50.6
+
+                                                                                                                                        y * (first/stable branch)1.01.00.4
+
+0.5  (dci0raeprcottuoarteps)ex           ( , e) = (1, 1/ 3)                                          0.5                        0.2
+
+     0.5                                 1.0  1.5            2.0                          2.5             0.5 1.0 1.5 2.0 2.5
+
+Figure 1: Left: number of interior axial equilibria as a function of (, e) -- independent of
+ (Lemma 2.1). White: none (direct apex capture). Red: two (saddle-node, Theorem 6.1).
+Light blue: exactly one (Theorem 4.1). The saddle-node boundary meets the exact point
+(, e) = (1, 1/ 3) (Proposition 5.2) precisely. Right: location y(e, ) of the stable branch; the
+ = 2 column is exactly the line y = e/3 (Proposition 5.1).
+
+7 How the fixed point is pushed: y/e and y/
+
+Where y(e, ) is defined implicitly by G(y; e, ) = 0 with G(y) = 0, the implicit function
+
+theorem gives
+
+                                                      y      =-  G/e                           ,     y    =-  G/     ,                                                (9)
+
+                                                      e          G/y y                                        G/y y
+
+with G/e = -( - 1)-2 and
+
+                                              G = y(1 + y2)(-2)/2 ln(1 + y2) - -1 ln .                                          (10)
+                                                      
+
+Proposition 7.1 (Sign of the depth-response,   1). For   1 (where G(y) > 0 by
+
+Theorem 4.1),
+
+                                                             sign                     y        = sign( - 1)  0.                 (11)
+
+                                                                                          e
+
+Proof. G/e = -( - 1)-2, and -2 > 0, so y/e = ( - 1)-2/G(y), whose sign is
+that of ( - 1) since G(y) > 0.
+
+Remark 7.2. At  = 1 exactly, y/e = 0: this is Proposition 5.2's e-independence, recovered
+
+as the boundary case of a general monotone law. For  > 1, taller triangles push the fixed point
+
+strictly higher (toward the apex); for  < 1 on the stable branch, the same computation (with
+G(ystable) > 0 there too) gives the same sign, matching the numerically observed rise of y with
+e in Figure 1 (right panel).
+
+8 Where bandwidth actually enters
+
+Lemma 2.1 settled the axial question without . But whether the population actually stops
+at y -- as opposed to passing through it while peeling off sideways -- is a second, genuinely
+-dependent question: the transverse eigenvalue x(y) from the bandwidth-Pareto flow,
+
+                                                             2de(y)-4  de(y) - ( - 2) - de(y)2                    - d3(y)-2  .  (12)
+                                         x(y) = N
+
+                                                                                                  5
+Proposition 8.1 (Clean decoupling, verified). When x(y) < 0, direct simulation of the full
+(non-axial) flow started on the symmetry axis matches the pure axial prediction y to within
+numerical integration error. When x(y) > 0, it does not: the transverse instability feeds
+back into the axial coordinate, and the population settles at a genuinely different, nonlinear
+two-dimensional equilibrium instead.
+
+   This was checked directly, not assumed
+
+   At (e, ) = (1.0, 1.0), where x(y) = -1.30 < 0: simulated final height 0.57735 against the
+   exact prediction 1/ 3 = 0.57735 -- matching to 5 significant figures. At (e, ) = (1.5, 1.5),
+   where x(y) = +0.75 > 0: the pure-axial prediction is y = 0.525, but full simulation gives
+   final height  1.45 -- the population does not stop at the axial fixed point at all, because it
+   is already unstable to sideways splitting there and the resulting nonlinear dynamics carries
+   it further up-axis before the population divides. This is exactly the partial-specialization
+   mechanism identified in the companion notes, now seen also acting on the axial coordinate
+   itself, not only on the transverse one.
+
+Summary: two questions, cleanly separated only some of the time
+
+      Question                                                                                  Governed by
+
+      Does an interior axial equilibrium exist, and where? (e, ) only -- never 
+
+      Does the population actually stop there?                                                  x(y) -- depends on  too
+
+The two questions decouple cleanly whenever the answer to the second is "yes": if x(y) <
+0, (e, ) alone tell you exactly where the population stops. If x(y) > 0, the axial answer
+is only a description of an equilibrium the population never actually reaches -- the real
+
+endpoint requires the full nonlinear, two-dimensional analysis.
+
+  1e03r6oots: reaches apex (e = 0.4, = 0.6)  1.0     = 1 exact: y * = 1/ 3 (e = 1.0)                = 2 exact: y * = e/3 (e = 1.5)      2 roots: converges to STABLE branch (e = 2.0, = 0.5)
+4                                            0.5                                          1                                               2
+                                             0.0
+3                                            0.5                                                                                           1
+                                             1.0
+                                             1.5                                          0                                                0
+                                             2.0
+2y(t)                                        2.5
+                                         y(t)
+                                                                                        y(t)0
+                                                                                                                                     y(t)
+                                                                                          1
+                                                                                                                                           1
+1
+                                                                                          2                                                2
+
+0               apex height e                                 apex height e                              apex height e                                    apex height e
+
+   0  20 t 40   60                                   20 t 40                          60     0  20 t 40                             60        0  20 t 40  60
+
+Figure 2: Direct high-accuracy integration of the axial dynamics (1) (rtol = 10-12), confirming
+every closed-form prediction: no interior equilibrium and direct apex capture (leftmost); the
+exact universal  = 1 location 1/ 3 (second); the exact  = 2 closed form e/3 (third); and
+convergence to the stable branch of a saddle-node pair while the unstable branch (dashed,
+upper) is avoided (rightmost). Dashed red lines mark predicted equilibria; dotted green marks
+the apex height e.
+
+9 Numerical methods
+
+All roots of G were found by sampling y  (10-4, e - 10-6) on a grid of 3­8 × 103 points and
+applying bisection (scipy.optimize.brentq) at each sign change. The saddle-node curve was
+traced by parametrizing candidate tangency points yc, solving G(yc, e, ) = 0 for e in closed form
+
+                                                             6
+(e = yc + [2yc(1 + yc2)(-2)/2]1/(-1)), and finding where yG along that curve changes sign. Axial
+trajectories were validated by direct high-accuracy integration (Radau, rtol = 10-12) of (1),
+matching every closed-form prediction in Sections 4­5 to better than 10-4. Full two-dimensional
+trajectories used the exact N -cell bandwidth-Pareto flow with a tiny symmetry-breaking seed,
+to test Proposition 8.1.
+
+10 Conclusion
+
+The interior axial fixed point that can trap a population short of the apex is entirely a fact
+about the triangle's shape (e) and the kernel's sharpness () -- bandwidth  has no say in
+whether it exists or where it sits. Three landmarks organize the whole picture:  = 1, where the
+fixed point (if present) sits at the universal 1/ 3 and existence turns on at e = 1/ 3 exactly;
+ = 2, where it sits at e/3 for every isosceles triangle; and the saddle-node curve for  < 1
+that connects continuously to the  = 1 threshold. What  governs is a genuinely separate
+question layered on top -- whether the population, once it would stop there, is stable against
+sideways splitting -- and the two questions only decouple cleanly on the stable side of that
+second threshold.
+
+11 The in-plane fixed point in pictures
+
+11.1 How  and e push y
+
+1.0       In-plane: how pushes the fixed point                                      In-plane: y * vs apex height e
+
+                                                                             = 0.5
+                                                                        1.4  = 1.0
+                         =2                                                  = 1.5
+y * /e (fixed-point height / apex height)
+0.8                                                                 y*  1.2  = 2.0
+                                                                             = 2.5
+                                                                             y * = e/3 ( = 2 exact)
+                                                                        1.0  y * = 1/ 3 ( = 1)
+
+0.6                                                                     0.8
+
+0.4                                                                     0.6
+
+                             y * /e = 1/3                               0.4
+                                                e = 0.6
+                                                e = 1.0
+0.2                                             e = 1.5                 0.2
+                                                e = 2.0
+                                                e = 3.0                 0.0
+                                                                           0.0 0.5 1.0 1.5 2.e0 2.5 3.0 3.5 4.0
+     0.5  1.0  1.5  2.0      2.5
+
+Figure 3: Left: the normalized fixed-point height y/e as a function of , for several apex
+heights e. Every curve passes through y/e = 1/3 at  = 2 (Proposition 5.1); for  < 2 it lies
+above 1/3 and falls as  grows; for  > 2 it lies below. The large-e curves terminate at small
+ because for those (e, ) pairs no interior equilibrium exists yet (the saddle-node boundary
+of Theorem 6.1). Right: the same data as absolute height y vs e, showing exact agreement
+with y = 1/ 3 at  = 1 (horizontal dotted, Proposition 5.2) and y = e/3 at  = 2 (dashed
+diagonal, Proposition 5.1). Curves for  < 1 curve downward (heavier apex pull places the fixed
+point lower); curves for  > 2 curve upward.
+
+                                                         7
+     e = 1(b.0la:ckx(cyo*n)tourre=d=cs(pl,ites), tbhlruees=htorladp)ped  80             e = 1(.b7l3a:ckxc(yon* t)ourr=ed=cs(p,liets),thbrluees=hotrlda)pped 80
+
+                                                                         60                                                    60
+
+                                                                         40                                                    40
+
+100                                                                      20        100                                         20
+
+                                                                         0                                                     0
+
+                                                                            20                                                    20
+
+                                                                            40                                                    40
+
+                                                                            60                                                    60
+
+                                                        80                                                                                 80
+0.5 1.0 1.5 2.0 2.5 3.0                                                            0.5 1.0 1.5 2.0 2.5 3.0
+
+Figure 4: Sign of x(y) in the (, ) plane for two apex heights. Red: x > 0, the fixed
+point is transversally unstable (population splits toward A1, A2). Blue: x < 0, the fixed point
+traps the population. The black contour is c(, e), the threshold that extends the two-target
+c() = 1 - 1/ to three targets. At large  the splitting pressure grows so fast that even small
+ is sufficient; at small  a strong bandwidth is required. Comparing left (e = 1.0) and right
+(e = 1.73, equilateral), increasing e expands the red splitting region: a taller triangle is harder
+to stabilize. This is the three-target analogue of the two-target phase diagram.
+
+11.2 The splitting-threshold map: where  enters
+
+12 The perpendicular geometry: source outside the plane
+
+We now turn to the companion geometry in which the source approaches the triangle's plane
+from outside, along the line connecting it to the centroid. The setup is identical to Sections 1­2
+in the previous analysis but now in three-dimensional space:
+
+             a1 = (-1, 0, 0),     a2 = (1, 0, 0),                                  a3 = (0, e, 0),  G=  0,  e  ,  0  ,
+                                                                                                            3
+
+with the source at  0,  e  ,  -h  and the population moving along the axis (x, y, z) =                                     0,  e  ,                             z  ,
+                        3                                                                                                      3
+
+z  (-h, 0).
+
+12.1 The transverse eigenvalue along the centroid axis
+
+By the isosceles symmetry, every cell at (0, e/3, z) has equal distances to A1 and A2, so x^ is
+an exact eigendirection of the transverse tensor everywhere on this axis. The corresponding
+eigenvalue is
+
+                              2de(z)-4  de(z) - ( - 2) - de(z)2                                     - d3(z)-2           ,         (13)
+             x(z) := N
+
+where de(z) = 1 + (e/3)2 + z2 is the common distance to A1, A2 and d3(z) = (2e/3)2 + z2
+is the distance to the apex.
+
+12.2 Critical height zc: when does splitting start?
+
+The population starts on the negative-x (stable) part of the axis and, as it ascends from
+z = -h toward z = 0, may cross into x > 0 -- exactly as in the two-target perpendicular case.
+The height at which this crossing occurs is
+
+                                  zc := sup{z < 0 : x(z) = 0},                                                                    (14)
+
+                                                                                8
+with the convention zc = - if x < 0 everywhere (population stays coherent), and zc  0- if
+x > 0 everywhere (unstable throughout).
+
+    The key statement, parallel to the two-target theory but now for three targets:
+
+   Claim: |zc| is the single number summarising "how early the split happens"
+
+   For fixed source depth h, the fraction of the descent path that is "already decided" when the
+   population commits to A1 or A2 is |zc|/h (larger = earlier). Everything in Sections 12.3­12.5
+   is about computing this number and understanding what drives it.
+
+12.3 Effect of : monotone growth of |zc|
+
+Proposition 12.1 ( pushes the split earlier). For fixed  > cperp() (so that splitting occurs
+at all) and fixed e, |zc| is increasing in .
+
+    The mechanism is the same as in the two-target case: larger  means the kernel discriminates
+more sharply between cells that are slightly closer to one archetype, so the splitting pressure
+builds at greater distance. Numerically, for the equilateral triangle at  = 1.6, |zc| grows from
+ 0.52 at  = 0.5 through  0.97 at  = 1.0 and  2.54 at  = 1.5, diverging as   cperp (the
+value where x(z)  0 for all z -- i.e. the population is neutrally stable at every point).
+
+   The divergence is real, not a numerical artefact
+
+   The divergence of |zc| as   c- is the exact three-target analogue of the |yc|  
+   divergence for the two-target case near  = 2. The threshold cperp depends on both  and
+   e; for the equilateral triangle with  = 1.6 it occurs near   1.85. At that point x(z) > 0
+   for all finite z: the population is splitting from the moment it leaves the source, regardless
+   of depth. This is the "unstable everywhere" regime of the two-target phase diagram, now
+   occurring along the perpendicular axis.
+
+12.4 Effect of : same monotone role as in two targets
+
+ enters x both in the threshold c (below which splitting never occurs) and in the magnitude
+of x above that threshold. For fixed  and e,
+
+increasing  = |zc| increases monotonically.                       (15)
+
+At large , x  22de2-4, so the growth is super-linear in  and |zc| can become very large.
+This is visible in the middle panel of Figure 5: for  = 1.5 the dependence is near-quadratic on
+the log-log scale.
+
+12.5 Effect of geometry (e): near-independence, explained
+
+The third panel of Figure 5 shows something that is not obvious a priori: |zc| is nearly independent
+of e for all . This is not an exact result in general, but it has a clean explanation. When the
+
+source is on the centroid line, both distances de(z) and d3(z) depend on e -- but the centroid
+condition ysource = e/3 keeps their ratio d3/de = 2e/3 · . .. bounded and slowly varying. The
+exact independence arises for the equilateral triangle (e = 3): there de = d3 for all z, and (13)
+reduces to
+
+xeq(z) =   R-4  R  -  3  R2  -  (  -  2)  ,  R :=      4  +  z2,  (16)
+          N           2                                3
+
+                         9
+which depends only           on R and the parameters -- not on e separately. The                                                     23ceqc(oe)ffiscaiteinsfty(invgs.
+1 in the two-target          formula) means the equilateral critical bandwidth is
+
+ceq   -  3  -      (  -  2)  =  0,  i.e.
+         2
+
+                                              cequilateral()   =    - 1/2  =            1-  1                                                                          (17)
+                                                                                               ,
+
+                                                                                            2
+
+which is strictly larger than the two-target c() = 1-1/: the equilateral three-target geometry
+is harder to destabilize than two targets, because the apex provides a third competing pull that
+partially stabilizes the symmetric position.
+
+         Perp: higher earlier split ( = 1.6)                  Perp: equilateral, sweep                                                    Perp: geometry (e) at = 1.6
+
+         e = 0.6                                       = 0.75                                                                   2.5
+         e = 1.0                                       = 1.0
+101      e = 1.73                             101      = 1.5                                                                    2.0
+         e = 3.0                                       = 2.0
+
+                                              100                                                                               1.5                                    = 0.75
+                                                                                                                                                                       = 1.0
+100|zc|                                                                                                                                                                = 1.5
+                                                            |zc|
+                                                                                                                          |zc|
+
+                                                                                                                                1.0                                    = 2.0
+
+10 1                                          10 1                                                                              0.5
+
+      0.4 0.6 0.8 1.0 1.2 1.4 1.6 1.8               1          2      3    4            5                                       0.0  0.5 1.0 1.5 2e.0 2.5 3.0 3.5
+
+Figure 5: Left: |zc| vs  at  = 1.6 for four triangle shapes. All curves are monotone increasing
+-- sharper landscapes trigger the split earlier along the approach -- and are nearly identical
+across shapes (see Section 12.5). Middle: |zc| vs  at fixed  and equilateral shape. Each curve
+begins at ceq() from (17) and grows unboundedly; for  = 1.5 the growth is near-quadratic
+in log . Right: |zc| vs e at fixed  and ; the weak e-dependence is consistent with the
+near-independence explained in the text.
+
+                                                                  10
+12.6 Validation: simulations show the split where theory predicts
+
+       PerpDeansdhiecdul=artshoeuorrceet,iceaqluzicl.atAe1r=alb(leue=, A32=):rxedv,sAz3t=ragjreecetonr.ies.
+
+       0.23/=0.04.07/50.37       0.33/0=.413.0/0.23        0.30/0=.310.5/0.40
+
+                      zc = 0.26                 zc = 0.38                 zc = 0.84
+
+= 1.0
+
+= 1.6  0=.300.7/05.,40/0=.310.6  0=.371/.00.,30/=0.13.36   0=.231/.05.,37/=0.14.06
+
+                     zc = 0.71                 zc = 0.97                 zc = 2.54
+
+       0=.400.7/05.,27/0=.323.5  0=.231/.00.,40/=0.23.75   0=.231/.05.,40/=0.23.75
+
+                     zc = 1.14                 zc = 1.63
+
+= 2.5
+
+                                                                                                                                             zc = 6.25
+
+                                                                         
+Figure 6: Perpendicular source, equilateral triangle (e = 3). Each panel shows cell trajectories
+in the (x, z) plane: x = 0 is the symmetry axis, z decreases top-to-bottom (plane at z = 0,
+source at bottom). Color = destination (A1=blue, A2=red, A3=green). The dashed line is the
+theoretical zc from (14). The observed fan-opening coincides with the predicted zc across all
+nine panels: the critical height correctly identifies when, along the descent, each cell commits to
+a side -- becoming earlier (|zc| larger) as  or  increases, and correctly placed at "everywhere"
+(no dashed line) for  = 1.5,  = 2.5, in the unstable-everywhere regime.
+
+                                 11
+13 Comparison: in-plane vs perpendicular
+
+Property               In-plane                                Perpendicular
+
+Key quantity           Fixed-point height y(e, )               Critical height zc(e, , )
+Role of                Controls whether splitting occurs at y  Controls where splitting starts (moves zc)
+Role of                Moves y; sign of x(y)
+Role of e              Determines y and existence (Thm. 6.1)    Moves zc; larger  earlier split
+Exact solvable points
+Phase diagram                                                  Weak effect (near-independence for centroid source)
+"Earlier commitment"    = 1 (y = 1/ 3 always);  = 2 (y = e/3)  Equilateral: de = d3, c = 1 - 1/(2)
+                       x(y) = 0 in (, )                        zc  ± boundary in (, )
+                       y closer to apex (smaller y/e)          Larger |zc|
+
+The central take-away for designing experiments: in the perpendicular geometry, |zc| is a single,
+clean scalar that you can read directly off simulations (where does the fan open?) and that the
+theory predicts without fitting parameters. Increasing  or  makes this number larger -- the
+split happens further from the plane, earlier in the descent -- while e has almost no effect when
+the source is placed at the centroid. This is the closest three-target analogue of the two-target
+statement "higher  drives an earlier split." In the in-plane geometry the statement is more
+nuanced:  moves the fixed point y but whether the population actually splits there depends
+additionally on  -- the two questions cannot be fully separated.
+
+                                 12
+
