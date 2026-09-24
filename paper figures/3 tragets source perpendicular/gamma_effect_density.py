@@ -69,6 +69,14 @@ CONFIGS = {
                                        gammas=[0.5, 1.2, 1.5, 1.9, 2.0, 2.5],
                                        title=r"$\beta = 1.60$  ($\beta > 1$)",
                                        geom_label=r"equilateral, $e=\sqrt{3}\,b$"),
+    # Requested variant of beta_gt1_equilateral: source pushed further out
+    # (h=2.10 vs 1.35) and a low/mid/high gamma set instead of the high-gamma
+    # cluster above. max_safe_h at gamma=1.8 here is 2.5, comfortably above
+    # h=2.10.
+    "beta_gt1_h2p1_equilateral": dict(beta=1.60, e=np.sqrt(3.0), b=1.0, h=2.10,
+                                       gammas=[0.5, 1.2, 1.8],
+                                       title=r"$\beta = 1.60$  ($\beta > 1$)",
+                                       geom_label=r"equilateral, $e=\sqrt{3}\,b$"),
 }
 
 
