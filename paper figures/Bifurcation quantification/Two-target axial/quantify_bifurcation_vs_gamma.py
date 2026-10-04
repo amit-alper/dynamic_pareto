@@ -38,14 +38,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
+ROOT = os.path.abspath(os.path.join(HERE, "..", "..", ".."))
 if ROOT not in sys.path:
     sys.path.insert(0, ROOT)
 
 from core.bifurcation import gamma_sweep
 from core.cache import cached_run
 
-CACHE_DIR = os.path.join(HERE, ".cache")
+CACHE_DIR = os.path.join(HERE, "..", ".cache")
 
 ARCHETYPES = np.array([[-1.0, 0.0], [1.0, 0.0]])
 SOURCE = np.array([0.0, -1.3])
@@ -70,16 +70,14 @@ def sweep_for(beta):
 
 
 def main():
-    fig, axes = plt.subplots(1, len(BETAS), figsize=(7.2 * len(BETAS), 5.6), sharey=True)
+    fig, axes = plt.subplots(1, len(BETAS), figsize=(7.6 * len(BETAS), 5.6), sharey=True)
 
     for ax, beta in zip(axes, BETAS):
         res = sweep_for(beta)
         g = res["gammas"]
 
-        ax.plot(g, res["height_sign"], "o-", color="#1f77b4", lw=1.8, ms=5,
-                 label=r"theory: sign crossing $y_c$")
-        ax.plot(g, res["height_visible"], "s--", color="#d62728", lw=1.8, ms=5,
-                 label=r"theory: $\Gamma$-threshold (visible by arrival)")
+        ax.plot(g, res["height_exact"], "D--", color="#9467bd", lw=1.8, ms=5,
+                 label="theory (exact variance ODE)")
         ok = ~np.isnan(res["empirical_mean"])
         ax.errorbar(g[ok], res["empirical_mean"][ok], yerr=res["empirical_std"][ok],
                      fmt="^", color="#2ca02c", ms=7, capsize=3, lw=1.5,
@@ -95,21 +93,20 @@ def main():
     axes[0].set_ylabel("bifurcation height $y^*$\n(more negative = earlier, closer to source)")
     handles, labels = axes[0].get_legend_handles_labels()
     fig.legend(handles, labels, loc="upper center", bbox_to_anchor=(0.5, 1.02),
-               ncol=3, fontsize=9.5, frameon=True)
+               ncol=2, fontsize=9.5, frameon=True)
     fig.suptitle("Quantifying \"sharper landscape leads to earlier decision\": "
-                  "bifurcation height vs. $\\gamma$", fontsize=13, y=1.14)
+                  "bifurcation height vs. $\\gamma$", fontsize=13, y=1.1)
     caption = (
         f"Two archetypes at $x=\\pm1$, source at $(0,-1.3)$, N={POP_N} cells, "
         f"$\\sigma$={SIGMA:g}, x_partial={X_PARTIAL:g}, {N_SEEDS} seeds/point, T={T:g}, K={K}. "
-        "Theory curves from core/bifurcation.py (deterministic coherent path + "
-        "the general transverse eigenvalue of core/stability.py, validated against "
-        "bandwidth_pareto_flow.tex's closed forms in tests/test_stability_bifurcation.py). "
-        "The sign-crossing $y_c$ saturates at the source height once the axis is "
-        "unstable from the very start (the 'unstable everywhere' regime); the "
-        "$\\Gamma$-threshold and empirical curves keep moving earlier past that point, "
-        "because a larger $\\gamma$ still makes the instability grow faster, not just "
-        "sooner -- generalizing the 'instability strengthens past the boundary' result "
-        "(perpendicular_instability_strengthening.tex) from the perpendicular "
+        "Theory: deterministic coherent path + the general transverse eigenvalue of "
+        "core/stability.py, with noise growth integrated exactly via "
+        "dV/dt = 2*lambda(t)*V + sigma^2, V(0)=0 (core/bifurcation.py:exact\\_variance), "
+        "validated against bandwidth_pareto_flow.tex's closed forms in "
+        "tests/test_stability_bifurcation.py. Both curves keep moving earlier as gamma "
+        "grows, because a larger gamma makes the instability grow faster, not just sooner "
+        "-- the 'instability strengthens past the boundary' result "
+        "(perpendicular_instability_strengthening.tex) generalized from the perpendicular "
         "three-target geometry to this two-target axial case."
     )
     fig.text(0.5, -0.06, caption, ha="center", fontsize=9, color="0.3", wrap=True)

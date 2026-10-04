@@ -321,7 +321,8 @@ def plot_perp_density_panel_3d(ax, archetypes, source, points3d, *,
                                 zc=None, title=None, elev=16, azim=-55, lims=None,
                                 show_legend=False, title_fontsize=11,
                                 cmap="viridis", gamma_pow=0.45, max_points=25000,
-                                point_size=2.5, density_bins=40, rng=None):
+                                point_size=2.5, density_bins=40, rng=None,
+                                alpha=0.55, dens_pct=100.0):
     """Same 3D furniture as plot_perp_panel (triangle, archetypes, source,
     z_c plane, real Axes3D box/ticks/view) but the trajectory cloud -- pooled,
     arrival-trimmed points from many seeds -- is rendered as a density-
@@ -350,10 +351,14 @@ def plot_perp_density_panel_3d(ax, archetypes, source, points3d, *,
     order = np.argsort(dens[keep])  # draw denser points last, on top
     keep = keep[order]
     pts, d = points3d[keep], dens[keep]
-    dn = d / (d.max() if d.max() > 0 else 1.0)
+    # dens_pct=100 -> normalise to the densest voxel (original behaviour); a lower
+    # percentile (e.g. 99.5) stops a single hot spot (the source tip) from
+    # compressing everything else into the dark end of the colour scale.
+    ref = np.percentile(d, dens_pct)
+    dn = np.minimum(d / (ref if ref > 0 else 1.0), 1.0)
     sca = ax.scatter(pts[:, 0], pts[:, 1], pts[:, 2], c=dn, cmap=cmap,
                       norm=PowerNorm(gamma_pow, vmin=0, vmax=1),
-                      s=point_size, alpha=0.55, linewidths=0, zorder=3,
+                      s=point_size, alpha=alpha, linewidths=0, zorder=3,
                       depthshade=False, label="path density" if show_legend else None)
 
     if zc is not None and np.isfinite(zc) and lims is not None:
