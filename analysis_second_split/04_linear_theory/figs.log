@@ -1,0 +1,3 @@
+C:\Users\ASUS\PycharmProjects\dynamic_pareto\analysis_second_split\theory\two_stage.py:21: RuntimeWarning: overflow encountered in scalar multiply
+  V[k+1]=V[k]*a+b
+figures done

@@ -1,0 +1,66 @@
+
+=== e/b=0.6  theory: z*_x=-0.0064326435549118864  z*_y=None  (sign z_x=-1.5450490645665753, z_y=None)
+    usable seeds (all 3 groups populated): 8/8
+    lone leaf=B  t1=10.8 z1=-0.79   t2=23.4 z2=-0.10   gap_t=12.6  sizes=[6, 5, 29]
+    lone leaf=A  t1=9.2 z1=-0.99   t2=20.2 z2=-0.20   gap_t=11.0  sizes=[8, 6, 26]
+    lone leaf=B  t1=6.8 z1=-1.32   t2=20.8 z2=-0.20   gap_t=14.0  sizes=[5, 8, 27]
+    lone leaf=B  t1=17.4 z1=-0.32   t2=28.0 z2=-0.05   gap_t=10.6  sizes=[7, 7, 26]
+    lone leaf=B  t1=7.4 z1=-1.23   t2=25.0 z2=-0.08   gap_t=17.6  sizes=[7, 5, 28]
+    lone leaf=B  t1=10.0 z1=-0.89   t2=24.6 z2=-0.09   gap_t=14.6  sizes=[5, 8, 27]
+    lone leaf=C  t1=6.2 z1=-1.40   t2=12.4 z2=-0.65   gap_t=6.2  sizes=[7, 7, 26]
+    lone leaf=B  t1=11.2 z1=-0.75   t2=26.8 z2=-0.05   gap_t=15.6  sizes=[7, 6, 27]
+
+=== e/b=1.0  theory: z*_x=-0.05169507167668682  z*_y=-9.926572746938856e-11  (sign z_x=-1.5485505781983215, z_y=-0.06197169430351227)
+    usable seeds (all 3 groups populated): 8/8
+    lone leaf=B  t1=12.6 z1=-0.64   t2=22.4 z2=-0.15   gap_t=9.8  sizes=[8, 8, 24]
+    lone leaf=A  t1=8.0 z1=-1.16   t2=19.0 z2=-0.27   gap_t=11.0  sizes=[11, 8, 21]
+    lone leaf=B  t1=7.4 z1=-1.24   t2=19.2 z2=-0.27   gap_t=11.8  sizes=[7, 9, 24]
+    lone leaf=B  t1=17.2 z1=-0.35   t2=25.8 z2=-0.10   gap_t=8.6  sizes=[8, 8, 24]
+    lone leaf=A  t1=8.4 z1=-1.11   t2=26.2 z2=-0.08   gap_t=17.8  sizes=[9, 8, 23]
+    lone leaf=B  t1=16.6 z1=-0.38   t2=25.2 z2=-0.10   gap_t=8.6  sizes=[7, 9, 24]
+    lone leaf=C  t1=7.0 z1=-1.30   t2=14.8 z2=-0.49   gap_t=7.8  sizes=[8, 8, 24]
+    lone leaf=B  t1=8.8 z1=-1.05   t2=23.2 z2=-0.13   gap_t=14.4  sizes=[9, 10, 21]
+
+=== e/b=1.73  theory: z*_x=-0.08460456056990891  z*_y=-0.08389156483619932  (sign z_x=-1.5477019629933815, z_y=-1.5416114329969808)
+    usable seeds (all 3 groups populated): 8/8
+    lone leaf=A  t1=20.4 z1=-0.26   t2=22.8 z2=-0.19   gap_t=2.4  sizes=[12, 13, 15]
+    lone leaf=C  t1=15.8 z1=-0.49   t2=19.4 z2=-0.31   gap_t=3.6  sizes=[14, 13, 13]
+    lone leaf=B  t1=18.2 z1=-0.36   t2=19.0 z2=-0.33   gap_t=0.8  sizes=[11, 12, 17]
+    lone leaf=B  t1=19.6 z1=-0.30   t2=21.0 z2=-0.25   gap_t=1.4  sizes=[15, 12, 13]
+    lone leaf=A  t1=16.2 z1=-0.46   t2=25.0 z2=-0.14   gap_t=8.8  sizes=[12, 15, 13]
+    lone leaf=A  t1=19.0 z1=-0.31   t2=20.8 z2=-0.25   gap_t=1.8  sizes=[13, 12, 15]
+    lone leaf=A  t1=18.4 z1=-0.35   t2=21.2 z2=-0.24   gap_t=2.8  sizes=[12, 14, 14]
+    lone leaf=C  t1=20.4 z1=-0.26   t2=23.4 z2=-0.17   gap_t=3.0  sizes=[11, 15, 14]
+
+=== e/b=2.0  theory: z*_x=-0.0884664640888421  z*_y=-0.18769318237889993  (sign z_x=-1.5417810255821067, z_y=-2.379668465476552)
+    usable seeds (all 3 groups populated): 8/8
+    lone leaf=C  t1=16.8 z1=-0.44   t2=20.6 z2=-0.27   gap_t=3.8  sizes=[14, 16, 10]
+    lone leaf=C  t1=13.2 z1=-0.69   t2=19.2 z2=-0.33   gap_t=6.0  sizes=[17, 13, 10]
+    lone leaf=C  t1=10.0 z1=-0.99   t2=19.6 z2=-0.32   gap_t=9.6  sizes=[12, 13, 15]
+    lone leaf=C  t1=16.8 z1=-0.45   t2=21.0 z2=-0.27   gap_t=4.2  sizes=[14, 14, 12]
+    lone leaf=A  t1=9.2 z1=-1.07   t2=20.4 z2=-0.28   gap_t=11.2  sizes=[12, 16, 12]
+    lone leaf=C  t1=9.4 z1=-1.05   t2=20.0 z2=-0.30   gap_t=10.6  sizes=[16, 14, 10]
+    lone leaf=C  t1=16.2 z1=-0.48   t2=21.0 z2=-0.26   gap_t=4.8  sizes=[15, 15, 10]
+    lone leaf=C  t1=18.8 z1=-0.34   t2=23.8 z2=-0.18   gap_t=5.0  sizes=[14, 15, 11]
+
+=== e/b=2.5  theory: z*_x=-0.09005961527045571  z*_y=-0.4270870948136043  (sign z_x=-1.5198639997969956, z_y=-2.5)
+    usable seeds (all 3 groups populated): 8/8
+    lone leaf=C  t1=12.0 z1=-0.82   t2=21.2 z2=-0.28   gap_t=9.2  sizes=[16, 18, 6]
+    lone leaf=C  t1=10.4 z1=-0.98   t2=18.8 z2=-0.39   gap_t=8.4  sizes=[18, 15, 7]
+    lone leaf=C  t1=9.6 z1=-1.07   t2=18.8 z2=-0.39   gap_t=9.2  sizes=[15, 15, 10]
+    lone leaf=C  t1=12.4 z1=-0.79   t2=21.0 z2=-0.30   gap_t=8.6  sizes=[16, 16, 8]
+    lone leaf=C  t1=8.6 z1=-1.18   t2=16.8 z2=-0.49   gap_t=8.2  sizes=[13, 20, 7]
+    lone leaf=C  t1=8.2 z1=-1.23   t2=19.6 z2=-0.35   gap_t=11.4  sizes=[17, 16, 7]
+    lone leaf=C  t1=11.8 z1=-0.84   t2=20.8 z2=-0.30   gap_t=9.0  sizes=[17, 14, 9]
+    lone leaf=C  t1=15.0 z1=-0.59   t2=23.0 z2=-0.22   gap_t=8.0  sizes=[14, 17, 9]
+
+=== e/b=3.0  theory: z*_x=-0.0869781657050716  z*_y=-0.6678574193070885  (sign z_x=-1.488482079142397, z_y=-2.5)
+    usable seeds (all 3 groups populated): 8/8
+    lone leaf=C  t1=10.0 z1=-1.06   t2=20.8 z2=-0.34   gap_t=10.8  sizes=[17, 19, 4]
+    lone leaf=C  t1=8.6 z1=-1.22   t2=17.8 z2=-0.47   gap_t=9.2  sizes=[18, 16, 6]
+    lone leaf=C  t1=8.4 z1=-1.24   t2=17.8 z2=-0.49   gap_t=9.4  sizes=[16, 17, 7]
+    lone leaf=C  t1=9.4 z1=-1.11   t2=20.0 z2=-0.38   gap_t=10.6  sizes=[17, 16, 7]
+    lone leaf=C  t1=9.4 z1=-1.12   t2=20.0 z2=-0.39   gap_t=10.6  sizes=[17, 19, 4]
+    lone leaf=C  t1=8.0 z1=-1.28   t2=17.6 z2=-0.48   gap_t=9.6  sizes=[18, 15, 7]
+    lone leaf=C  t1=8.6 z1=-1.21   t2=20.2 z2=-0.36   gap_t=11.6  sizes=[18, 15, 7]
+    lone leaf=C  t1=11.8 z1=-0.88   t2=21.8 z2=-0.29   gap_t=10.0  sizes=[15, 18, 7]
