@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "C:\Users\ASUS\PycharmProjects\dynamic_pareto\paper figures\sketches\figure3_gamma_results\figure3_panelC_wide.py", line 65, in <module>
+    def box_3t_dense(ax, cloud, g, zstar, lims, color, label, A3, S3, point_size=POINT3D, max_points=MAXPTS3D):
+                                                                                 ^^^^^^^
+NameError: name 'POINT3D' is not defined
